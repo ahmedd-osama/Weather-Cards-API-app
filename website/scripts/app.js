@@ -1,4 +1,3 @@
-console.log('starting');
 let apiKey = "&appid=" + document.getElementById("keyInput").value;
 const baseZipURL = "https://api.openweathermap.org/geo/1.0/zip?zip=";
 const baseCityNameURL = "https://api.openweathermap.org/geo/1.0/direct?q=";
