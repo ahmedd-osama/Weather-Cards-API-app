@@ -1,6 +1,7 @@
+console.log('starting');
 let apiKey = "&appid=" + document.getElementById("keyInput").value;
-const baseZipURL = "http://api.openweathermap.org/geo/1.0/zip?zip=";
-const baseCityNameURL = "http://api.openweathermap.org/geo/1.0/direct?q=";
+const baseZipURL = "https://api.openweathermap.org/geo/1.0/zip?zip=";
+const baseCityNameURL = "https://api.openweathermap.org/geo/1.0/direct?q=";
 const baseURL = "https://api.openweathermap.org/data/2.5/weather?";
 // Personal API Key for OpenWeatherMap API
 let FetchCountLimit = 1;
