@@ -31,6 +31,6 @@ __Instructions__:
 
 
 ## Extra information / Attributions:
-1- in the main folder of the app you will find a folder with the name 'node_modules' which is created with the package.json file by Node.js
-2-The application uses Fontawesome for Icons.
-3- The diferent illustrations of the themes of the cards are from Freepik website.
+1- in the main folder of the app you will find a folder with the name 'node_modules' which is created with the package.json file by Node.js   
+2-The application uses Fontawesome for Icons.   
+3- The diferent illustrations of the themes of the cards are from Freepik website.   
