@@ -122,7 +122,7 @@ getWeatherBtn.onclick = ("click", () => {
 saveBtn.onclick =("click", () => {
 
     //##ATENTION
-    // the next two lines line should be disapled if the server is working
+    // the next lines should be disapled if the server is working
     allcards.push({
       apiData: WeatherDataHolder,
       userData: journalTextarea.value,
