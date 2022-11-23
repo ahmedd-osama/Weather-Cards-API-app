@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Weather Journal</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Oswald:400,600,700|Ranga:400,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="app" class="container">
+      <div class="keyPage closed">
+        <i
+          class="fa-solid fa-arrow-left backArrow"
+          onclick="keypage.classList.toggle('closed')"
+        ></i>
+        <label for="keyInput"
+          >Enter your
+          <a
+            href="https://openweathermap.org/api"
+            id="OWM1"
+            class="link"
+            target="_blank"
+            >Open Weather Map
+          </a>
+          API key:
+        </label>
+        <div class="d-flex flex-d-row">
+          <input
+            type="text"
+            id="keyInput"
+            placeholder="API Key"
+            oninput="updateAPIKey(); validateAPIKey()"
+          />
+          <div id="keyBtnPage" class=""><i class="fa-solid fa-key"></i></div>
+        </div>
+        <p id="keyValidationBox"></p>
+        <p>
+          In case you do not have an Open Weather Map key you can easily
+          <a
+            href="https://home.openweathermap.org/users/sign_up"
+            id="OWM2"
+            class="link"
+            target="_blank"
+            >sign up</a
+          >
+          for free and get your key. It might take two hours to be activated
+        </p>
+      </div>
+      <h1 class="holder headline">Weather Journal Cards</h1>
+      <div class="holder zip">
+        <div class="datafield">
+          <label>Get weather now!</label>
+          <div class="inputContent">
+            <input type="text" id="searchValue" placeholder="City Name" />
+            <div class="dropdown">
+              <button onclick="dropdown()" class="dropbtn" id="dropbtn">
+                <div id="dropbtnText" data-searchByOption="cityName">
+                  City Name
+                </div>
+                <i class="fa-solid fa-caret-down"></i>
+              </button>
+              <div id="myDropdown" class="dropdown-content">
+                <a
+                  onclick="dropdownOption(this, 'cityName')"
+                  data-searchByOption="cityName"
+                  >City Name</a
+                >
+                <a
+                  onclick="dropdownOption(this, 'zipcode')"
+                  data-searchByOption="zipcode"
+                  >Zipcode</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <button id="getWeather">Get weather</button>
+        <button
+          id="keyBtn"
+          class=""
+          onclick="keypage.classList.toggle('closed')"
+        >
+          <i class="fa-solid fa-key"></i>
+        </button>
+      </div>
+      <p id="searchValidationBox" class="holder" style="display: block"></p>
+      <div class="holder feel">
+        <label for="journalTextarea">What's happening today?</label>
+        <div class="journalContainer moderate" id="journalContainer">
+          <div id="journalCover">
+            Descover your weather and start journalling!
+          </div>
+          <div class="textsection">
+            <textarea
+              class="myInput"
+              id="journalTextarea"
+              placeholder="Write about your day here!"
+              rows="9"
+              cols="50"
+            ></textarea>
+          </div>
+          <div class="journalData d-flex .f-wrap">
+            <div class="locatoinAndDate d-flex justify-start">
+              <div class="journalDataDisplay d-flex m-w-100">
+                <i class="fa-solid fa-location-dot"></i>
+                <div id="journalLocation"></div>
+              </div>
+              <div class="journalDataDisplay d-flex m-w-100">
+                <i class="fa-solid fa-calendar-days"></i>
+                <div id="journalDate"></div>
+              </div>
+            </div>
+            <div class="tempAndWeather d-flex justify-start w-50p">
+              <div class="journalDataDisplay d-flex m-w-100">
+                <i class="fa-solid fa-temperature-low"></i>
+                <div id="journalTemp"></div>
+              </div>
+              <div class="journalDataDisplay d-flex m-w-100">
+                <i class="fa-solid fa-cloud-sun"></i>
+                <div id="journalWeather"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button id="save" type="submit">save</button>
+      </div>
+      <h2>My Journals</h2>
+      <div class="holder userJournals" id="userJournals"></div>
+    </div>
+    <script src="scripts/app.js" type="text/javascript"></script>
+  </body>
+</html>
